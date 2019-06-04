@@ -5,7 +5,7 @@ import format from "date-fns/format";
 import MarkedContent from "./MarkedContent";
 
 const Container = styled.div`
-    padding: 2.5rem 0;
+    padding-bottom: 2.5rem 0;
 `;
 
 const Posts = styled.div`

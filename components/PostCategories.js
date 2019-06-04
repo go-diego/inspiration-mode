@@ -12,7 +12,7 @@ const categories = [
 
 const Category = styled.div`
     height: 100px;
-    margin: 1rem 0;
+    ${"" /* margin: 1rem 0; */}
     position: relative;
 `;
 
@@ -22,40 +22,46 @@ export default function PostCategories() {
             <p className="heading is-family-primary has-text-link has-text-weight-bold">
                 Categories
             </p>
-            {categories.map((category, i) => {
-                const q = slugify(category.type, {
-                    replacement: "-",
-                    remove: /[*+~.()'"!:@]/g,
-                    lower: true
-                });
-                return (
-                    <Link
-                        key={i}
-                        prefetch
-                        // href={`/archive?q=${q}`}
-                        // as={`/blog?q=${q}`}
-                        to={`/archive?q=${q}`}>
-                        <a>
-                            <Category className="is-clipped">
-                                <figure className="image is-3by2">
-                                    <img
-                                        className="is-object-fit-cover"
-                                        src={category.image}
-                                        alt={`${category.type} category`}
-                                    />
-                                </figure>
-                                <div className="is-overlay">
-                                    <p
-                                        style={{ padding: "0.5rem" }}
-                                        className="title is-size-4 has-text-weight-bold has-text-light">
-                                        {category.type}
-                                    </p>
-                                </div>
-                            </Category>
-                        </a>
-                    </Link>
-                );
-            })}
+            <div className="columns">
+                {categories.map((category, i) => {
+                    const q = slugify(category.type, {
+                        replacement: "-",
+                        remove: /[*+~.()'"!:@]/g,
+                        lower: true
+                    });
+                    return (
+                        <div className="column">
+                            <Link
+                                key={i}
+                                prefetch
+                                // href={`/archive?q=${q}`}
+                                // as={`/blog?q=${q}`}
+                                to={`/archive?q=${q}`}>
+                                <a>
+                                    <Category className="is-clipped">
+                                        <figure className="image is-3by2">
+                                            <img
+                                                className="is-object-fit-cover"
+                                                src={category.image}
+                                                alt={`${
+                                                    category.type
+                                                } category`}
+                                            />
+                                        </figure>
+                                        <div className="is-overlay">
+                                            <p
+                                                style={{ padding: "0.5rem" }}
+                                                className="title is-size-4 has-text-weight-bold has-text-light">
+                                                {category.type}
+                                            </p>
+                                        </div>
+                                    </Category>
+                                </a>
+                            </Link>
+                        </div>
+                    );
+                })}
+            </div>
         </div>
     );
 }

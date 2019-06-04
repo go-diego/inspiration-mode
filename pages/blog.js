@@ -11,6 +11,11 @@ import PostCategories from "../components/PostCategories";
 import Subscribe from "../components/Subscribe";
 import SocialContacs from "../components/SocialContacts";
 
+const CategoriesContainer = styled(Section)`
+    padding-top: 0;
+    padding-bottom: 0;
+`;
+
 export default function BlogHomePage({ posts, metadata, data }) {
     const { description, title, keywords, content } = data;
     const tags = { description, title, keywords };
@@ -29,8 +34,15 @@ export default function BlogHomePage({ posts, metadata, data }) {
         <BlogLayout metadata={metadata}>
             <Head tags={tags} />
             <Section>
-                <PageTitleHeading title={title} />
+                <div className="is-flex is-justify-content-center">
+                    <figure className="">
+                        <img src="https://www.roarafrica.com/wp-content/uploads/2017/11/sample-logo.png" />
+                    </figure>
+                </div>
             </Section>
+            <CategoriesContainer>
+                <PostCategories />
+            </CategoriesContainer>
             <Section>
                 <div className="columns">
                     <div className="column is-8">
@@ -63,7 +75,7 @@ export default function BlogHomePage({ posts, metadata, data }) {
                     <div className="column">
                         <SocialContacs />
                         <Subscribe />
-                        <PostCategories />
+                        {/* <PostCategories /> */}
                         <RecentPosts
                             posts={recentPosts}
                             heading={recentPostsHeading}
