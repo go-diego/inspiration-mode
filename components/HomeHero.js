@@ -32,10 +32,10 @@ const LevelLink = styled.a`
     width: 32px;
 `;
 
-export default function HomeHero({data, metadata}) {
-    const {description, greeting, tagline, profile_image} = data;
-    //TODO: do I need us=nstagram_url
-    const {email, facebook_url, twitter_url, linkedin_url} = metadata;
+export default function HomeHero({ data, metadata }) {
+    const { description, greeting, tagline, profile_image } = data;
+    //TODO: do I need instagram_url
+    const { email, facebook_url, twitter_url, linkedin_url } = metadata;
     return (
         <Hero className="hero home-hero is-medium">
             <div className="hero-head">
@@ -46,7 +46,10 @@ export default function HomeHero({data, metadata}) {
                     <div className="columns">
                         <div className="column is-flex is-justify-content-center is-align-items-center">
                             <figure className="image is-256x256 animated fadeInDown">
-                                <Image className="is-rounded" src={profile_image} />
+                                <Image
+                                    className="is-rounded"
+                                    src={profile_image}
+                                />
                             </figure>
                         </div>
                         <div className="column">

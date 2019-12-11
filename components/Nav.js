@@ -36,7 +36,7 @@ class Nav extends React.Component {
                             <figure className="image is-32x32">
                                 <Img
                                     className="is-rounded is-object-fit-cover"
-                                    src="/static/uploads/profile.jpg"
+                                    src="/public/uploads/profile.jpg"
                                 />
                             </figure>
                         </a>
