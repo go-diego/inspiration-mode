@@ -38,6 +38,6 @@
         "fs-extra": "^7.0.1",
         "http-server": "^0.11.1",
         "next-images": "^1.0.1",
-        "node-sass": "^4.12.0"
+        "node-sass": "^4.13.1"
     }
 }
